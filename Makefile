@@ -28,3 +28,6 @@ reset_db: ##@DB Wipe and re-migrate / seed
 	@./vendor/bin/sail artisan db:wipe
 	@./vendor/bin/sail artisan migrate
 	@./vendor/bin/sail artisan db:seed
+
+test: ##@Test Run the tests
+	@./vendor/bin/sail artisan test
