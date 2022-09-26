@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $admin = User::factory()->create([
-          'name' => 'admin',
-          'email' => 'admin@example.com',
+            'name' => 'admin',
+            'email' => 'admin@example.com',
         ]);
 
         $this->seedRolesAndPermissions();
@@ -38,9 +38,9 @@ class DatabaseSeeder extends Seeder
     private function seedPermissionsToAdmin(Role $admin): void
     {
         $roles = [
-          Permission::create(['name' => 'create flight']),
-          Permission::create(['name' => 'edit flight']),
-          Permission::create(['name' => 'delete flight']),
+            Permission::create(['name' => 'create flight']),
+            Permission::create(['name' => 'edit flight']),
+            Permission::create(['name' => 'delete flight']),
         ];
 
         foreach ($roles as $role) {
@@ -51,13 +51,12 @@ class DatabaseSeeder extends Seeder
     private function seedPermissionToClient(Role $client): void
     {
         $roles = [
-          Permission::create(['name' => 'book flight']),
-          Permission::create(['name' => 'un-book flight']),
+            Permission::create(['name' => 'book flight']),
+            Permission::create(['name' => 'un-book flight']),
         ];
 
         foreach ($roles as $role) {
             $client->givePermissionTo($role);
         }
     }
-
 }
