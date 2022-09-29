@@ -26,6 +26,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@headlessui/vue@npm:^1.7.2":
+  version: 1.7.2
+  resolution: "@headlessui/vue@npm:1.7.2"
+  peerDependencies:
+    vue: ^3.2.0
+  checksum: c1eed9ff4ed5127dcc24ecb0b229c3150111194475704784ae36e28804b27ba197aeec389aa1747c26bd1f8e3e93de0c7a8e167060e80cd2f9cb5ab469584adf
+  languageName: node
+  linkType: hard
+
+"@heroicons/vue@npm:^2.0.11":
+  version: 2.0.11
+  resolution: "@heroicons/vue@npm:2.0.11"
+  peerDependencies:
+    vue: ">= 3"
+  checksum: 9b706008a5a9feff656a5479490e73bb4c21b8432b25732a76ec5ca01816ccf9d66d82d75bcbd26f89efbc6d5a1e12205ecfec16ef384a194d9285702eeef3da
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -1777,6 +1795,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@headlessui/vue": ^1.7.2
+    "@heroicons/vue": ^2.0.11
     "@tailwindcss/forms": ^0.5.2
     "@tailwindcss/typography": ^0.5.7
     alpinejs: ^3.0.6

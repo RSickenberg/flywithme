@@ -33,9 +33,11 @@
             @endif
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+            <div>
+                <div class="mx-auto max-w-7xl">
+                    {{ $slot }}
+                </div>
+            </div>
         </div>
 
         @stack('modals')

@@ -21,6 +21,9 @@ up: ##@Server Start the server in detached mode.
 down: ##@Server Stop the server
 	@./vendor/bin/sail down
 
+restart: ##@Server Restart the server
+	@./vendor/bin/sail restart
+
 pint: ##@Lint Run pint linter
 	@./vendor/bin/sail pint
 
