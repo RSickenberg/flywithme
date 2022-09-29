@@ -18,13 +18,13 @@
                 <div class="ds-divider ds-divider-horizontal">OR</div>
                 <div class="mt-3 sm:mt-0 sm:ml-3">
                     <a href="#"
-                       class="ds-btn shadow ds-btn-xl md:text-lg font-medium ds-btn-block ds-btn-outline ds-btn-lg">{{ __('home.register') }}</a>
+                       class="ds-btn shadow ds-btn-xl md:text-lg font-medium ds-btn-block ds-btn-outline ds-btn-lg">{{ __('home.login') }}</a>
                 </div>
             </div>
         </div>
     </main>
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full ds-mask ds-mask-parallelogram"
+        <img class="h-56 w-full sm:mt-11 sm:px-4 object-cover sm:h-72 md:h-96 lg:h-full lg:w-full md:ds-mask md:ds-mask-parallelogram"
              src="https://flyingmag.sfo3.digitaloceanspaces.com/flyingma/wp-content/uploads/2021/08/25174815/httpspush.flyingmag.comsitesflyingmag.comfilesimages201908archer_a2a_2ship-1-1568x1045.jpg"
              alt="">
     </div>

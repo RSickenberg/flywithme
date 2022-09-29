@@ -58,7 +58,15 @@ module.exports = {
 
   daisyui: {
     styled: true,
-    themes: ['light', 'dark'],
+    themes: [{
+      flywithme: {
+        primary: flywithmeColors.primary,
+        secondary: flywithmeColors.secondary,
+        accent: "#37cdbe",
+        neutral: "#3d4451",
+        "base-100": "#ffffff",
+      }
+    }],
     base: true,
     utils: true,
     logs: true,

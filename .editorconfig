@@ -515,8 +515,8 @@ ij_javascript_wrap_comments = false
 
 [{*.ctp,*.engine,*.hphp,*.inc,*.install,*.module,*.php,*.php4,*.php5,*.phtml,*.profile,*.test,*.theme,.php_cs.dist,event_manager_persister_interface}]
 tab_width = 2
-ij_continuation_indent_size = 2
-ij_visual_guides = 120
+ij_continuation_indent_size = 4
+ij_visual_guides = 180
 ij_php_align_assignments = false
 ij_php_align_class_constants = false
 ij_php_align_group_field_declarations = false
