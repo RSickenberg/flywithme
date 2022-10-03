@@ -9,4 +9,5 @@ return [
     'subtitle' => 'Book a flight with me is a platform used to reserve a flight to discover, enjoy and learn about aviation with a single-engine piston aircraft.',
     'register' => 'Register',
     'login' => 'Login',
+    'book' => 'Book a flight',
 ];

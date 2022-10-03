@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FlightsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +22,13 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
+])->group(static function () {
     Route::get('/dashboard', static function () {
         return view('dashboard');
     })->name('dashboard');
+
+    // -----------------------------------
+    Route::controller(FlightsController::class)->prefix('flight')->group(static function () {
+        Route::get('/book', 'index')->name('flight_index');
+    });
 });

@@ -11,15 +11,22 @@
                 {{  __('home.subtitle') }}
             </p>
             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div>
-                    <a href="#"
-                       class="ds-btn shadow ds-btn-xl md:text-lg font-medium ds-btn-block ds-btn-primary ds-btn-lg">{{ __('home.register') }}</a>
-                </div>
-                <div class="ds-divider ds-divider-horizontal">OR</div>
-                <div class="mt-3 sm:mt-0 sm:ml-3">
-                    <a href="#"
-                       class="ds-btn shadow ds-btn-xl md:text-lg font-medium ds-btn-block ds-btn-outline ds-btn-lg">{{ __('home.login') }}</a>
-                </div>
+                @guest
+                    <div>
+                        <a href="{{ route('register') }}"
+                           class="ds-btn shadow ds-btn-xl md:text-lg font-medium ds-btn-block ds-btn-primary ds-btn-lg">{{ __('home.register') }}</a>
+                    </div>
+                    <div class="ds-divider ds-divider-horizontal">OR</div>
+                    <div class="mt-3 sm:mt-0 sm:ml-3">
+                        <a href="{{ route('login') }}"
+                           class="ds-btn shadow ds-btn-xl md:text-lg font-medium ds-btn-block ds-btn-outline ds-btn-lg">{{ __('home.login') }}</a>
+                    </div>
+                @endguest
+                @auth
+                    <div>
+                        <a href="{{ route('flight_index') }}" class="ds-btn shadow ds-btn-xl md:text-lg font-medium ds-btn-block ds-btn-primary ds-btn-lg">{{ __('home.book') }}</a>
+                    </div>
+                @endauth
             </div>
         </div>
     </main>
