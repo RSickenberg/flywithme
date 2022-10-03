@@ -6,7 +6,5 @@ class FlightsController extends Controller
 {
     public function index()
     {
-
     }
-
 }
