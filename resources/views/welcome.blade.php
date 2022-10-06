@@ -32,7 +32,7 @@
     </main>
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img class="h-56 w-full sm:mt-11 sm:px-4 object-cover sm:h-72 md:h-96 lg:h-full lg:w-full md:ds-mask md:ds-mask-parallelogram"
-             src="https://flyingmag.sfo3.digitaloceanspaces.com/flyingma/wp-content/uploads/2021/08/25174815/httpspush.flyingmag.comsitesflyingmag.comfilesimages201908archer_a2a_2ship-1-1568x1045.jpg"
+             src="{{ asset('storage/images/welcome_plane.jpg') }}"
              alt="">
     </div>
 </x-app-layout>

@@ -1,4 +1,4 @@
-<header class="sticky -top-0.5 z-30 border-b dark:border-gray-700 bg-white dark:bg-coolGray-800 mb-3">
+<header class="sticky -top-0.5 z-30 border-b dark:border-gray-700 bg-white dark:bg-coolGray-800 mb-5">
     <div class="container px-4 py-5 mx-auto space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between lg:space-x-10">
         <div class="flex justify-between">
             <a href="/">

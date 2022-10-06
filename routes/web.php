@@ -29,6 +29,6 @@ Route::middleware([
 
     // -----------------------------------
     Route::controller(FlightsController::class)->prefix('flight')->group(static function () {
-        Route::get('/book', 'index')->name('flight_index');
+        Route::get('/', 'index')->name('flight_index');
     });
 });
