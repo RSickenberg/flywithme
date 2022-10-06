@@ -9,11 +9,11 @@
     <div class="px-4">
         <div class="sm:flex sm:items-center">
             <div class="sm:flex-auto">
-                <h1 class="text-xl font-semibold text-gray-900">Flights</h1>
-                <p class="mt-2 text-sm text-gray-700">See all the flights in the future or add a new one.</p>
+                <h1 class="text-xl font-semibold text-gray-900">{{ __('flights.header') }}</h1>
+                <p class="mt-2 text-sm text-gray-700">{{ __('flights.sub_header') }}</p>
             </div>
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                <button type="button" class="ds-btn ds-btn-accent ds-btn-block text-white">Add Flight</button>
+                <button type="button" class="ds-btn ds-btn-accent ds-btn-block text-white">{{ __('flights.add') }}</button>
             </div>
         </div>
     </div>
