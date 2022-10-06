@@ -1,5 +1,6 @@
 <?php
 
+use App\Enum\FlightStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -26,14 +27,15 @@ return new class extends Migration
             $table->string('route')->comment('The route used')->default('N/A');
             $table->point('departure_location')->nullable();
             $table->point('arrival_location')->nullable();
+            $table->enum('status', array_map(static fn(BackedEnum $enum) => $enum->value, FlightStatus::cases()));
             $table->timestampsTz();
         });
 
         Schema::create('flights_times', static function (Blueprint $table) {
             $table->id();
             $table->foreignId('flight_id')
-              ->constrained()
-              ->cascadeOnUpdate()->cascadeOnDelete();
+                ->constrained()
+                ->cascadeOnUpdate()->cascadeOnDelete();
 
             $table->time('total')->nullable();
             $table->time('night')->nullable();
@@ -63,4 +65,5 @@ return new class extends Migration
         Schema::dropIfExists('flights');
         Schema::dropIfExists('flights_times');
     }
+
 };

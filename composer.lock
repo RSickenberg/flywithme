@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65df90397f1d24681cbcf9102db1c2e0",
+    "content-hash": "7c1ad8788e6c0bb74679a0b070ed28c0",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2656,94 +2656,6 @@
             "time": "2022-08-01T11:03:24+00:00"
         },
         {
-            "name": "okipa/laravel-table",
-            "version": "5.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Okipa/laravel-table.git",
-                "reference": "af3f086ec7a4d568b3b6a1903978f9c9a49d48d5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Okipa/laravel-table/zipball/af3f086ec7a4d568b3b6a1903978f9c9a49d48d5",
-                "reference": "af3f086ec7a4d568b3b6a1903978f9c9a49d48d5",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^8.0|^9.0",
-                "livewire/livewire": "^2.0",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "brianium/paratest": "^6.4",
-                "ext-pdo": "*",
-                "laravel/pint": "^1.1",
-                "nunomaduro/collision": "^5.10|^6.0",
-                "nunomaduro/larastan": "^1.0|^2.0",
-                "orchestra/testbench": "^6.0|^7.0",
-                "phpmd/phpmd": "^2.11"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Okipa\\LaravelTable\\LaravelTableServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Okipa\\LaravelTable\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Arthur LORENT",
-                    "email": "arthur.lorent@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Generate tables from Eloquent models.",
-            "homepage": "https://github.com/okipa/laravel-table",
-            "keywords": [
-                "generate",
-                "generation",
-                "generator",
-                "html",
-                "laravel",
-                "laravel-table",
-                "list",
-                "livewire",
-                "okipa",
-                "package",
-                "php",
-                "table"
-            ],
-            "support": {
-                "issues": "https://github.com/Okipa/laravel-table/issues",
-                "source": "https://github.com/Okipa/laravel-table/tree/5.0.1"
-            },
-            "funding": [
-                {
-                    "url": "https://paypal.me/arthurlorent",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/Okipa",
-                    "type": "github"
-                },
-                {
-                    "url": "https://ko-fi.com/arthurlorent",
-                    "type": "ko_fi"
-                }
-            ],
-            "time": "2022-09-26T14:18:08+00:00"
-        },
-        {
             "name": "paragonie/constant_time_encoding",
             "version": "v2.6.3",
             "source": {
@@ -3633,6 +3545,50 @@
                 }
             ],
             "time": "2022-09-16T03:22:46+00:00"
+        },
+        {
+            "name": "safran-cassiopee/php-metar-decoder",
+            "version": "v0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SafranCassiopee/php-metar-decoder.git",
+                "reference": "0de2b1b0a9bce7b73bff719348baf3b0a961dc7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SafranCassiopee/php-metar-decoder/zipball/0de2b1b0a9bce7b73bff719348baf3b0a961dc7f",
+                "reference": "0de2b1b0a9bce7b73bff719348baf3b0a961dc7f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MetarDecoder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Edouard de Labareyre",
+                    "email": "edouard@melix.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "METAR weather observation decoder",
+            "support": {
+                "issues": "https://github.com/SafranCassiopee/php-metar-decoder/issues",
+                "source": "https://github.com/SafranCassiopee/php-metar-decoder/tree/v0.8"
+            },
+            "time": "2020-02-11T13:31:33+00:00"
         },
         {
             "name": "spatie/laravel-permission",

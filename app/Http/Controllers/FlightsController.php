@@ -13,6 +13,6 @@ class FlightsController extends Controller
 
     public function index(): View
     {
-        return view('flights.index');
+        return view('flights.index', ['flights' => $this->flight->inFuture()->get()]);
     }
 }

@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
 
         $this->seedRolesAndPermissions();
         $admin->assignRole(['admin']);
+
+        $this->call(FlightSeeder::class);
     }
 
     private function seedRolesAndPermissions(): void
