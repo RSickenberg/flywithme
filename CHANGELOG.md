@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.1.0] - 2022-10-10
 ### Added
 - Added database migrations
 - Added factories
@@ -12,3 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Flight Controller
 - Added Flight Filters
 - Tweaked some models with ULID primary keys
+
+[Unreleased]: https://github.com/RSickenberg/flywithme/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/RSickenberg/flywithme/releases/tag/v0.1.0
