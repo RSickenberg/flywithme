@@ -25,7 +25,7 @@ class FlightIndexFilter extends FormRequest
     public function rules(): array
     {
         return [
-            'old' => 'bool'
+            'old' => 'bool',
         ];
     }
 }

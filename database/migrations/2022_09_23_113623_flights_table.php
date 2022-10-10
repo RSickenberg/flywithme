@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('route')->comment('The route used')->default('N/A');
             $table->point('departure_location')->nullable();
             $table->point('arrival_location')->nullable();
-            $table->enum('status', array_map(static fn(BackedEnum $enum) => $enum->value, FlightStatus::cases()));
+            $table->enum('status', array_map(static fn (BackedEnum $enum) => $enum->value, FlightStatus::cases()));
             $table->timestampsTz();
         });
 
@@ -65,5 +65,4 @@ return new class extends Migration
         Schema::dropIfExists('flights');
         Schema::dropIfExists('flights_times');
     }
-
 };

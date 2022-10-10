@@ -38,7 +38,7 @@ class FlightFactory extends Factory
             'route' => $this->faker->word(),
             'departure_location' => new Point($this->faker->latitude(), $this->faker->longitude()),
             'arrival_location' => new Point($this->faker->latitude(), $this->faker->longitude()),
-            'status' => $this->faker->randomElement(array_map(static fn(\BackedEnum $enum) => $enum->value,FlightStatus::cases())),
+            'status' => $this->faker->randomElement(array_map(static fn (\BackedEnum $enum) => $enum->value, FlightStatus::cases())),
         ];
     }
 }

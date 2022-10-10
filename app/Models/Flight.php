@@ -68,5 +68,4 @@ class Flight extends Model
     {
         return new SpatialBuilder($query);
     }
-
 }
