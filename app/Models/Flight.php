@@ -28,9 +28,7 @@ class Flight extends Model
     protected $casts = [
         'departure_location' => Point::class,
         'arrival_location' => Point::class,
-        'out' => 'immutable_datetime:d.m.Y H:i',
-        'in' => 'immutable_datetime:d.m.Y H:i',
-        'status' => FlightStatus::class
+        'status' => FlightStatus::class,
     ];
 
     public function times(): HasOne
@@ -40,8 +38,20 @@ class Flight extends Model
 
     public function scopeInFuture(): SpatialBuilder
     {
+        /** @var $builder SpatialBuilder */
+        return $this
+            ->whereDate('out', '>=', Carbon::now())
+            ->whereStatus(FlightStatus::ACTIVE)
+            ->orWhere('status', '=', FlightStatus::POSTPONED);
+    }
+
+    public function scopePassed(): SpatialBuilder
+    {
         /** @var SpatialBuilder */
-        return $this::whereDate('out', '>=', Carbon::now());
+        return $this
+            ->whereDate('out', '<=', Carbon::now())
+            ->whereNot('status', '=', FlightStatus::ACTIVE)
+            ->whereNot('status', '=', FlightStatus::POSTPONED);
     }
 
     public function getStatusClass(): string
@@ -58,4 +68,5 @@ class Flight extends Model
     {
         return new SpatialBuilder($query);
     }
+
 }
