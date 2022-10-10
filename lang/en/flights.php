@@ -16,6 +16,7 @@ return [
 
         'action' => [
             'edit' => 'Edit',
+            'include_passed' => 'Show old / archived'
         ],
     ],
 ];

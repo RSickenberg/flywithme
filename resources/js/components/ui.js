@@ -1,8 +1,11 @@
 window.FlyWithMe = {};
+window.FlyWithMe.App = {};
 
 import { NavigationMenu } from './navigation/navigationMenu';
+import { FlightIndex } from './app/flights'
 
 window.FlyWithMe.NavigationMenu = NavigationMenu;
+window.FlyWithMe.App.FlightIndex = FlightIndex;
 
 // ######################### UTILS #########################
 

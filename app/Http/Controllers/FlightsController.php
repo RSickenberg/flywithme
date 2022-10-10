@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FlightIndexFilter;
 use App\Models\Flight;
 use Illuminate\Contracts\View\View;
 
@@ -11,8 +12,11 @@ class FlightsController extends Controller
     {
     }
 
-    public function index(): View
+    public function index(FlightIndexFilter $request): View
     {
-        return view('flights.index', ['flights' => $this->flight->inFuture()->get()]);
+        $flights = $request->get('old') ? $this->flight->get() : $this->flight->inFuture()->get();
+        return view('flights.index', [
+            'flights' => $flights,
+        ]);
     }
 }

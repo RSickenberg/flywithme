@@ -44,5 +44,10 @@
 
         @livewireScripts
         @stack('extra-js')
+        <script type="text/javascript" async>
+            window.onload = function() {
+                FlyWithMe.NavigationMenu = new FlyWithMe.NavigationMenu;
+            }
+        </script>
     </body>
 </html>

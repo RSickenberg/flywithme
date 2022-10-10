@@ -28,7 +28,7 @@ class FlightFactory extends Factory
 
         return [
             'registration' => $this->faker->randomElement(['HB-ABC', 'HB-HFH', 'HB-CCV', 'HB-HFK']),
-            'model' => $this->faker->randomElement(['CESSNA', 'BRAVO']),
+            'model' => $this->faker->randomElement(['CESSNA', 'BRAVO', 'DIAMOND', 'PILATUS', 'MOONEY', 'PIPER', 'BEECH']),
             'flight_number' => $this->faker->randomNumber(4),
             'departure' => $this->faker->randomElement(['LSGL', 'LSGG', 'LSGN', 'LSGS', 'LSGY', 'LSGZ']),
             'arrival' => $this->faker->randomElement(['LSGL', 'LSGG', 'LSGN', 'LSGS', 'LSGY', 'LSGZ']),

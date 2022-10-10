@@ -10,8 +10,8 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     @role('admin')
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        Admin
+                    <x-jet-nav-link href="{{ route('flight_index') }}" :active="request()->routeIs('flight_index')">
+                        Flights
                     </x-jet-nav-link>
                     @endrole
                 </div>
