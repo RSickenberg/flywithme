@@ -9,3 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added database migrations
 - Added factories
 - Added Livewire with jetstream
+- Added Flight Controller
+- Added Flight Filters
+- Tweaked some models with ULID primary keys
