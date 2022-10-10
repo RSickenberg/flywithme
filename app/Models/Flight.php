@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enum\FlightStatus;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -16,6 +17,7 @@ use MatanYadaev\EloquentSpatial\SpatialBuilder;
 class Flight extends Model
 {
     use HasFactory;
+    use HasUlids;
 
     protected $fillable = [
         'registration', 'model', 'flight_number', 'departure', 'arrival',
@@ -36,7 +38,7 @@ class Flight extends Model
         return $this->hasOne(FlightTime::class);
     }
 
-    public function inFuture(): SpatialBuilder
+    public function scopeInFuture(): SpatialBuilder
     {
         /** @var SpatialBuilder */
         return $this::whereDate('out', '>=', Carbon::now());

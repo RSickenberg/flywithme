@@ -15,7 +15,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('flights', static function (Blueprint $table) {
-            $table->id();
+            $table->ulid('id')->unique();
             $table->string('registration')->comment('The aircraft plate');
             $table->string('model')->comment('The aircraft model');
             $table->string('flight_number')->nullable();
@@ -32,8 +32,8 @@ return new class extends Migration
         });
 
         Schema::create('flights_times', static function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('flight_id')
+            $table->ulid('id')->unique();
+            $table->foreignUlid('flight_id')
                 ->constrained()
                 ->cascadeOnUpdate()->cascadeOnDelete();
 

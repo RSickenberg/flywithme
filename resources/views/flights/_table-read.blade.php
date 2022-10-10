@@ -25,7 +25,7 @@
         @foreach ($flights as $flight)
             <tr>
                 <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
-                    {{ $flight->id }}
+                    {{ '#' . substr($flight->id, -5) }}
                 </td>
                 <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ $flight->registration }}</td>
                 <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">{{ $flight->model }}</td>

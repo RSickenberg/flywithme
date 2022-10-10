@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('statistics', static function (Blueprint $table) {
-            $table->id();
+            $table->ulid();
             $table->unsignedInteger('number_of_flights');
             $table->unsignedInteger('passengers')->comment('Total taken');
             $table->unsignedInteger('distance')->comment('Distance in NM');

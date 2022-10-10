@@ -28,7 +28,10 @@ Route::middleware([
     })->name('dashboard');
 
     // -----------------------------------
-    Route::controller(FlightsController::class)->prefix('flight')->group(static function () {
-        Route::get('/', 'index')->name('flight_index');
-    });
+    Route::controller(FlightsController::class)
+        ->prefix('flight')
+        ->middleware(['role:admin'])
+        ->group(static function () {
+            Route::get('/', 'index')->name('flight_index');
+        });
 });
