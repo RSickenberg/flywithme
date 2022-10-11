@@ -42,5 +42,5 @@
         @endforeach
         </tbody>
     </table>
-    {{ $flights->appends(request()->except('page'))->links() }}
+    {{ $flights->links() }}
 </div>

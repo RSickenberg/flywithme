@@ -210,12 +210,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"alpinejs@npm:^3.0.6":
-  version: 3.10.3
-  resolution: "alpinejs@npm:3.10.3"
+"alpinejs@npm:^3.10.4":
+  version: 3.10.4
+  resolution: "alpinejs@npm:3.10.4"
   dependencies:
     "@vue/reactivity": ~3.1.1
-  checksum: 43c873f6f2f905667203cb2f4cdd570fca242db6f15835f60a43a55cf0d3728f5b1f60680925e6d1113c95240f882504c0968411d41117ce6afd52e95a42bc16
+  checksum: 1ead2d0431fa352a1ec5997155e70dfd5bb3f421e91deafcc122ace4e24358f53798bba33814a27234c86dbe7993d25e29b6be046e0eb673f1118134d451b4da
   languageName: node
   linkType: hard
 
@@ -1818,7 +1818,7 @@ __metadata:
     "@heroicons/vue": ^2.0.12
     "@tailwindcss/forms": ^0.5.3
     "@tailwindcss/typography": ^0.5.7
-    alpinejs: ^3.0.6
+    alpinejs: ^3.10.4
     autoprefixer: ^10.4.12
     axios: ^0.27.2
     daisyui: ^2.31.0
