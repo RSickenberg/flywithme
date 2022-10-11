@@ -40,9 +40,9 @@ class Flight extends Model
     {
         /** @var $builder SpatialBuilder */
         return $this
-            ->whereDate('out', '>=', Carbon::now())
             ->whereStatus(FlightStatus::ACTIVE)
-            ->orWhere('status', '=', FlightStatus::POSTPONED);
+            ->orWhere->whereStatus(FlightStatus::POSTPONED)
+            ->orderBy('status');
     }
 
     public function scopePassed(): SpatialBuilder
@@ -51,7 +51,8 @@ class Flight extends Model
         return $this
             ->whereDate('out', '<=', Carbon::now())
             ->whereNot('status', '=', FlightStatus::ACTIVE)
-            ->whereNot('status', '=', FlightStatus::POSTPONED);
+            ->whereNot('status', '=', FlightStatus::POSTPONED)
+            ->orderBy('status');
     }
 
     public function getStatusClass(): string

@@ -8,16 +8,21 @@ use Illuminate\Contracts\View\View;
 
 class FlightsController extends Controller
 {
-    public function __construct(protected Flight $flight)
-    {
-    }
+    public function __construct(protected Flight $flight) {}
 
     public function index(FlightIndexFilter $request): View
     {
-        $flights = $request->validated('old') ? $this->flight->passed()->get() : $this->flight->inFuture()->get();
+        $flights = $request->validated('old') ?
+            $this->flight
+                ->passed()
+                ->paginate(10) :
+            $this->flight
+                ->inFuture()
+                ->paginate(10);
 
         return view('flights.index', [
             'flights' => $flights,
         ]);
     }
+
 }
