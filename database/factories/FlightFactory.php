@@ -36,6 +36,7 @@ class FlightFactory extends Factory
             'in' => Carbon::now()->addHours(random_int(1, 7))->toDateTimeString(),
             'metar' => $this->faker->randomElement($rawMetars),
             'route' => $this->faker->word(),
+            'legs' => $this->faker->randomNumber(1),
             'departure_location' => new Point($this->faker->latitude(), $this->faker->longitude()),
             'arrival_location' => new Point($this->faker->latitude(), $this->faker->longitude()),
             'status' => $this->faker->randomElement(array_map(static fn (\BackedEnum $enum) => $enum->value, FlightStatus::cases())),

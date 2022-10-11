@@ -21,7 +21,7 @@ class Flight extends Model
 
     protected $fillable = [
         'registration', 'model', 'flight_number', 'departure', 'arrival',
-        'out', 'in', 'metar', 'route', 'departure_location', 'arrival_location',
+        'out', 'in', 'metar', 'route', 'legs', 'departure_location', 'arrival_location',
         'status',
     ];
 

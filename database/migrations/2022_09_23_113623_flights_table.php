@@ -25,6 +25,7 @@ return new class extends Migration
             $table->dateTimeTz('in')->comment('The date and hour of arrival');
             $table->string('metar')->nullable()->comment('The metar of the flight');
             $table->string('route')->comment('The route used')->default('N/A');
+            $table->unsignedInteger('legs')->comment('The amount of legs')->default(1);
             $table->point('departure_location')->nullable();
             $table->point('arrival_location')->nullable();
             $table->enum('status', array_map(static fn (BackedEnum $enum) => $enum->value, FlightStatus::cases()));
