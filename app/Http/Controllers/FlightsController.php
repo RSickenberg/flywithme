@@ -8,7 +8,9 @@ use Illuminate\Contracts\View\View;
 
 class FlightsController extends Controller
 {
-    public function __construct(protected Flight $flight) {}
+    public function __construct(protected Flight $flight)
+    {
+    }
 
     public function index(FlightIndexFilter $request): View
     {
@@ -26,5 +28,4 @@ class FlightsController extends Controller
             'flights' => $flights,
         ]);
     }
-
 }
