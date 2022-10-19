@@ -16,7 +16,7 @@
     "laravel/framework": "^9.36.2",
     "laravel/jetstream": "^2.12.3",
     "laravel/sanctum": "^3.0.1",
-    "laravel/tinker": "^2.7.2",
+    "laravel/tinker": "^2.7",
     "livewire/livewire": "^2.10.7",
     "matanyadaev/laravel-eloquent-spatial": "^2.7",
     "safran-cassiopee/php-metar-decoder": "^0.8.0",

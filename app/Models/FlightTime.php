@@ -14,6 +14,8 @@ class FlightTime extends Model
 
     protected $table = 'flights_times';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'flight_id', 'total', 'night', 'xc', 'actual_inst', 'pic', 'sic', 'dual_rcbd', 'solo',
         'day_to', 'night_to', 'day_ldg', 'night_ldg', 'remarks',

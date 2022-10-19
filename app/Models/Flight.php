@@ -31,9 +31,12 @@ class Flight extends Model
         'status' => FlightStatus::class,
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function times(): HasOne
     {
-        return $this->hasOne(FlightTime::class);
+        return $this->hasOne(FlightTime::class, 'flight_id');
     }
 
     public function scopeInFuture(): SpatialBuilder

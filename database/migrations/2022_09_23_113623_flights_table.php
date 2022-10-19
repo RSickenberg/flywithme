@@ -35,7 +35,7 @@ return new class extends Migration
         Schema::create('flights_times', static function (Blueprint $table) {
             $table->ulid('id')->unique()->primary();
             $table->foreignUlid('flight_id')
-                ->constrained()
+                ->constrained('flights')
                 ->cascadeOnUpdate()->cascadeOnDelete();
 
             $table->time('total')->nullable();
