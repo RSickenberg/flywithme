@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added flight legs count
+- Flight seeds nows adds the flight times
+
+### Fixed
+- Fixed relation with Flight -> FlightTime
 
 ## [0.1.0] - 2022-10-10
 ### Added
