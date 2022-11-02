@@ -36,12 +36,11 @@ class Flight extends Model
      */
     public function times(): HasOne
     {
-        return $this->hasOne(FlightTime::class, 'flight_id');
+        return $this->hasOne(FlightTime::class);
     }
 
     public function scopeInFuture(): SpatialBuilder
     {
-        /** @var $builder SpatialBuilder */
         return $this
             ->whereStatus(FlightStatus::ACTIVE)
             ->orWhere->whereStatus(FlightStatus::POSTPONED)
@@ -50,7 +49,6 @@ class Flight extends Model
 
     public function scopePassed(): SpatialBuilder
     {
-        /** @var SpatialBuilder */
         return $this
             ->whereDate('out', '<=', Carbon::now())
             ->whereNot('status', '=', FlightStatus::ACTIVE)
