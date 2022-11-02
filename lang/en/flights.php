@@ -27,6 +27,14 @@ return [
                 'base_data' => 'Base Data',
                 'nav' => 'Navigation',
             ],
+            'wizard' => [
+                'general' => 'General',
+                'geo' => [
+                    'label' => 'Geolocation',
+                    'desc' => 'Input all information regarding the flight data'
+                ]
+            ],
+            'status' => 'Status',
             'registration' => 'Registration',
             'model' => 'Model',
             'flight_number' => 'Flight number',
