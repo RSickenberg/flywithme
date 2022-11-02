@@ -2,11 +2,9 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 const flywithmeColors = {
-  primary: '#0ed3d0',
-  secondary: '#ba79fa',
-  primaryDark: '#096766',
-  secondaryDark: '#3c0d69',
-  danger: colors.rose,
+  primary: colors.blue,
+  secondary: colors.purple,
+  danger: colors.red,
   success: colors.green,
   warning: colors.yellow,
 };
@@ -18,7 +16,7 @@ module.exports = {
     './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
     './vendor/laravel/jetstream/**/*.blade.php',
     './storage/framework/views/*.php',
-    './resources/views/**/*.blade.php',
+    './resources/**/*.blade.php',
     './resources/js/components/**/*.vue',
     './resources/js/components/**/*.js',
     './app/**/*.php',
@@ -42,6 +40,10 @@ module.exports = {
       colors: {
         ...colors,
         ...flywithmeColors,
+        danger: colors.rose,
+        primary: colors.blue,
+        success: colors.green,
+        warning: colors.yellow,
       },
       backgroundColor: {
         DEFAULT: colors.white,
@@ -55,6 +57,7 @@ module.exports = {
   },
 
   plugins: [
+    require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('daisyui'),
   ],
@@ -63,12 +66,12 @@ module.exports = {
     styled: true,
     themes: [{
       flywithme: {
-        primary: flywithmeColors.primary,
-        secondary: flywithmeColors.secondary,
-        accent: "#37cdbe",
-        neutral: "#3d4451",
-        "base-100": "#ffffff",
-      }
+        primary: flywithmeColors.primary[300],
+        secondary: flywithmeColors.secondary[300],
+        accent: '#37cdbe',
+        neutral: '#3d4451',
+        'base-100': '#ffffff',
+      },
     }],
     base: true,
     utils: true,

@@ -5,6 +5,15 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@alpinejs/focus@npm:^3.10.5":
+  version: 3.10.5
+  resolution: "@alpinejs/focus@npm:3.10.5"
+  dependencies:
+    focus-trap: ^6.6.1
+  checksum: 79aa4873ce3ff81a51d57b8695c68cfb57d5100f2027ad77f844259dfc31ba9899ba25f06ea7d2c320e07bbe05607e700ee7b532001d6f51ebbcdf50f5cedc76
+  languageName: node
+  linkType: hard
+
 "@awcodes/alpine-floating-ui@npm:^3.4.0":
   version: 3.4.0
   resolution: "@awcodes/alpine-floating-ui@npm:3.4.0"
@@ -49,12 +58,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/vue@npm:^2.0.12":
-  version: 2.0.12
-  resolution: "@heroicons/vue@npm:2.0.12"
+"@heroicons/vue@npm:^2.0.13":
+  version: 2.0.13
+  resolution: "@heroicons/vue@npm:2.0.13"
   peerDependencies:
     vue: ">= 3"
-  checksum: 227bfd4f49e45ee57f731751d7a6e74a21562bd551ae9c36f77aa15cc4df0a05265171ecd157056adab23accf1b9638286d7ac9a032687895759036bc8dd7e6d
+  checksum: 7ebb6ce0884ac77dfade4f44665216270beedda87e6b73bbad9e0ee0043e23fd97a3af16eb798a31a87429df1809e3b21d1bc4a7e4f3e6eaba9ab9a11b148294
   languageName: node
   linkType: hard
 
@@ -217,7 +226,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"alpinejs@npm:^3.10.4":
+"alpinejs@npm:^3.10.5":
   version: 3.10.5
   resolution: "alpinejs@npm:3.10.5"
   dependencies:
@@ -274,7 +283,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.12":
+"autoprefixer@npm:^10.4.13":
   version: 10.4.13
   resolution: "autoprefixer@npm:10.4.13"
   dependencies:
@@ -525,7 +534,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^2.31.0":
+"daisyui@npm:^2.38.0":
   version: 2.38.0
   resolution: "daisyui@npm:2.38.0"
   dependencies:
@@ -903,6 +912,15 @@ __metadata:
   dependencies:
     to-regex-range: ^5.0.1
   checksum: cc283f4e65b504259e64fd969bcf4def4eb08d85565e906b7d36516e87819db52029a76b6363d0f02d0d532f0033c9603b9e2d943d56ee3b0d4f7ad3328ff917
+  languageName: node
+  linkType: hard
+
+"focus-trap@npm:^6.6.1":
+  version: 6.9.4
+  resolution: "focus-trap@npm:6.9.4"
+  dependencies:
+    tabbable: ^5.3.3
+  checksum: 0b4cebcc11010bd9397731092bd59a981e838c710c6497374ba70571875a14ab27c0db7d60f36005ec01bdabc3b9cfeda11d30ddf5b8874596dcc95e18913b3b
   languageName: node
   linkType: hard
 
@@ -1838,21 +1856,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@alpinejs/focus": ^3.10.5
     "@awcodes/alpine-floating-ui": ^3.4.0
     "@fortawesome/fontawesome-free": ^6.2.0
     "@headlessui/vue": ^1.7.3
-    "@heroicons/vue": ^2.0.12
+    "@heroicons/vue": ^2.0.13
     "@tailwindcss/forms": ^0.5.3
     "@tailwindcss/typography": ^0.5.7
-    alpinejs: ^3.10.4
-    autoprefixer: ^10.4.12
+    alpinejs: ^3.10.5
+    autoprefixer: ^10.4.13
     axios: ^0.27.2
-    daisyui: ^2.31.0
+    daisyui: ^2.38.0
     laravel-vite-plugin: ^0.7.0
     lodash: ^4.17.21
     postcss: ^8.4.18
-    tailwindcss: ^3.1.8
-    vite: ^3.1.8
+    tailwindcss: ^3.2.1
+    vite: ^3.2.2
   languageName: unknown
   linkType: soft
 
@@ -1993,6 +2012,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tabbable@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "tabbable@npm:5.3.3"
+  checksum: 1aa56e1bb617cc10616c407f4e756f0607f3e2d30f9803664d70b85db037ca27e75918ed1c71443f3dc902e21dc9f991ce4b52d63a538c9b69b3218d3babcd70
+  languageName: node
+  linkType: hard
+
 "tailwindcss@npm:^3":
   version: 3.1.8
   resolution: "tailwindcss@npm:3.1.8"
@@ -2028,7 +2054,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.1.8":
+"tailwindcss@npm:^3.2.1":
   version: 3.2.1
   resolution: "tailwindcss@npm:3.2.1"
   dependencies:
@@ -2138,7 +2164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^3.1.8":
+"vite@npm:^3.2.2":
   version: 3.2.2
   resolution: "vite@npm:3.2.2"
   dependencies:
