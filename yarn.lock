@@ -5,6 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@awcodes/alpine-floating-ui@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@awcodes/alpine-floating-ui@npm:3.4.0"
+  checksum: 1b5feea3b29ff8e3324eb173fd38461d6a427a0146f4827fc5546cd69846e33f902b98d5ed55b9738a80f7b87e2fd18fc90b1f32e9e9932bb42aa537d3031593
+  languageName: node
+  linkType: hard
+
 "@esbuild/android-arm@npm:0.15.10":
   version: 0.15.10
   resolution: "@esbuild/android-arm@npm:0.15.10"
@@ -1831,6 +1838,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@awcodes/alpine-floating-ui": ^3.4.0
     "@fortawesome/fontawesome-free": ^6.2.0
     "@headlessui/vue": ^1.7.3
     "@heroicons/vue": ^2.0.12

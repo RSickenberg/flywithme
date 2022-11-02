@@ -41,6 +41,7 @@
         </div>
 
         @stack('modals')
+        @livewire('notifications')
 
         @livewireScripts
         @stack('extra-js')

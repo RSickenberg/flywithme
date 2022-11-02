@@ -6,6 +6,9 @@ const flywithmeColors = {
   secondary: '#ba79fa',
   primaryDark: '#096766',
   secondaryDark: '#3c0d69',
+  danger: colors.rose,
+  success: colors.green,
+  warning: colors.yellow,
 };
 
 /** @type {import('tailwindcss').Config} */
@@ -20,6 +23,7 @@ module.exports = {
     './resources/js/components/**/*.js',
     './app/**/*.php',
     './config/*.php',
+    './vendor/filament/**/*.blade.php',
   ],
 
   theme: {
