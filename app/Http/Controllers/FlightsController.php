@@ -16,13 +16,13 @@ class FlightsController extends Controller
     {
         $flights = $request->validated('old') ?
             $this->flight
-                ->passed()
-                ->paginate(10)
-                ->withQueryString() :
+                ->passed() :
             $this->flight
-                ->inFuture()
-                ->paginate(10)
-                ->withQueryString();
+                ->inFuture();
+
+        $flights = $flights
+            ->paginate(10)
+            ->withQueryString();
 
         return view('flights.index', [
             'flights' => $flights,
