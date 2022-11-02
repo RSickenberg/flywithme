@@ -6,6 +6,7 @@ use App\Models\Flight;
 use App\Models\FlightTime;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 class FlightTimeFactory extends Factory
 {
@@ -20,6 +21,7 @@ class FlightTimeFactory extends Factory
           ->addHours($this->faker->randomNumber(1));
 
         return [
+            'id' => Str::ulid()->toBase32(),
             'total' => $time->toTimeString(),
             'night' => Carbon::create(),
             'xc' => Carbon::now(),

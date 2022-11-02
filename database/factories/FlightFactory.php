@@ -6,6 +6,7 @@ use App\Enum\FlightStatus;
 use App\Models\Flight;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use MatanYadaev\EloquentSpatial\Objects\Point;
 
 class FlightFactory extends Factory
@@ -27,6 +28,7 @@ class FlightFactory extends Factory
         ];
 
         return [
+            'id' => Str::ulid()->toBase32(),
             'registration' => $this->faker->randomElement(['HB-ABC', 'HB-HFH', 'HB-CCV', 'HB-HFK']),
             'model' => $this->faker->randomElement(['CESSNA', 'BRAVO', 'DIAMOND', 'PILATUS', 'MOONEY', 'PIPER', 'BEECH']),
             'flight_number' => $this->faker->randomNumber(4),
