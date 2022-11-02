@@ -17,6 +17,7 @@ class StatisticFactory extends Factory
     public function definition(): array
     {
         return [
+            'id' => $this->newModel()->newUniqueId(),
             'number_of_flights' => $this->faker->randomNumber(),
             'passengers' => $this->faker->randomNumber(),
             'distance' => $this->faker->randomNumber(),

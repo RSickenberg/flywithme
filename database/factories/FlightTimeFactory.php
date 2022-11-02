@@ -16,22 +16,23 @@ class FlightTimeFactory extends Factory
         Carbon::setTestNowAndTimezone(Carbon::create(2022, tz: 'UTC'));
 
         $time = Carbon::now()
-          ->addMinutes($this->faker->randomNumber())
-          ->addHours($this->faker->randomNumber());
+          ->addMinutes($this->faker->randomNumber(1))
+          ->addHours($this->faker->randomNumber(1));
 
         return [
-            'total' => $time,
+            'id' => $this->newModel()->newUniqueId(),
+            'total' => $time->toTimeString(),
             'night' => Carbon::create(),
             'xc' => Carbon::now(),
             'actual_inst' => Carbon::now(),
-            'pic' => $time,
+            'pic' => $time->toTimeString(),
             'sic' => Carbon::now(),
             'dual_rcvd' => Carbon::now(),
             'solo' => Carbon::now(),
-            'day_to' => $this->faker->randomNumber(),
-            'night_to' => $this->faker->randomNumber(),
-            'day_ldg' => $this->faker->randomNumber(),
-            'night_ldg' => $this->faker->randomNumber(),
+            'day_to' => $this->faker->randomNumber(1),
+            'night_to' => $this->faker->randomNumber(1),
+            'day_ldg' => $this->faker->randomNumber(1),
+            'night_ldg' => $this->faker->randomNumber(1),
             'remarks' => $this->faker->word(),
 
             'flight_id' => Flight::factory(),

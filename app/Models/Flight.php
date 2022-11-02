@@ -21,7 +21,7 @@ class Flight extends Model
 
     protected $fillable = [
         'registration', 'model', 'flight_number', 'departure', 'arrival',
-        'out', 'in', 'metar', 'route', 'departure_location', 'arrival_location',
+        'out', 'in', 'metar', 'route', 'legs', 'departure_location', 'arrival_location',
         'status',
     ];
 
@@ -31,6 +31,9 @@ class Flight extends Model
         'status' => FlightStatus::class,
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function times(): HasOne
     {
         return $this->hasOne(FlightTime::class);
@@ -38,20 +41,19 @@ class Flight extends Model
 
     public function scopeInFuture(): SpatialBuilder
     {
-        /** @var $builder SpatialBuilder */
         return $this
-            ->whereDate('out', '>=', Carbon::now())
             ->whereStatus(FlightStatus::ACTIVE)
-            ->orWhere('status', '=', FlightStatus::POSTPONED);
+            ->orWhere->whereStatus(FlightStatus::POSTPONED)
+            ->orderBy('status');
     }
 
     public function scopePassed(): SpatialBuilder
     {
-        /** @var SpatialBuilder */
         return $this
             ->whereDate('out', '<=', Carbon::now())
             ->whereNot('status', '=', FlightStatus::ACTIVE)
-            ->whereNot('status', '=', FlightStatus::POSTPONED);
+            ->whereNot('status', '=', FlightStatus::POSTPONED)
+            ->orderBy('status');
     }
 
     public function getStatusClass(): string
@@ -68,5 +70,4 @@ class Flight extends Model
     {
         return new SpatialBuilder($query);
     }
-
 }

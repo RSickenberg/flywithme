@@ -14,7 +14,15 @@ class FlightsController extends Controller
 
     public function index(FlightIndexFilter $request): View
     {
-        $flights = $request->validated('old') ? $this->flight->passed()->get() : $this->flight->inFuture()->get();
+        $flights = $request->validated('old') ?
+            $this->flight
+                ->passed() :
+            $this->flight
+                ->inFuture();
+
+        $flights = $flights
+            ->paginate(10)
+            ->withQueryString();
 
         return view('flights.index', [
             'flights' => $flights,

@@ -30,6 +30,8 @@ class DatabaseSeeder extends Seeder
 
     private function seedRolesAndPermissions(): void
     {
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+
         $admin = Role::create(['name' => 'admin']);
         $client = Role::create(['name' => 'client']);
 

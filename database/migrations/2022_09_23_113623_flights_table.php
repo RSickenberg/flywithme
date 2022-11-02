@@ -25,16 +25,17 @@ return new class extends Migration
             $table->dateTimeTz('in')->comment('The date and hour of arrival');
             $table->string('metar')->nullable()->comment('The metar of the flight');
             $table->string('route')->comment('The route used')->default('N/A');
+            $table->unsignedInteger('legs')->comment('The amount of legs')->default(1);
             $table->point('departure_location')->nullable();
             $table->point('arrival_location')->nullable();
-            $table->enum('status', array_map(static fn(BackedEnum $enum) => $enum->value, FlightStatus::cases()));
+            $table->enum('status', array_map(static fn (BackedEnum $enum) => $enum->value, FlightStatus::cases()));
             $table->timestampsTz();
         });
 
         Schema::create('flights_times', static function (Blueprint $table) {
             $table->ulid('id')->unique()->primary();
             $table->foreignUlid('flight_id')
-                ->constrained()
+                ->constrained('flights')
                 ->cascadeOnUpdate()->cascadeOnDelete();
 
             $table->time('total')->nullable();
@@ -65,5 +66,4 @@ return new class extends Migration
         Schema::dropIfExists('flights');
         Schema::dropIfExists('flights_times');
     }
-
 };

@@ -42,4 +42,5 @@
         @endforeach
         </tbody>
     </table>
+    {{ $flights->links() }}
 </div>
