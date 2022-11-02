@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Statistic>
@@ -18,7 +17,7 @@ class StatisticFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => Str::ulid()->toBase32(),
+            'id' => $this->newModel()->newUniqueId(),
             'number_of_flights' => $this->faker->randomNumber(),
             'passengers' => $this->faker->randomNumber(),
             'distance' => $this->faker->randomNumber(),

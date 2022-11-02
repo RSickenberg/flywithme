@@ -6,7 +6,6 @@ use App\Enum\FlightStatus;
 use App\Models\Flight;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Str;
 use MatanYadaev\EloquentSpatial\Objects\Point;
 
 class FlightFactory extends Factory
@@ -28,7 +27,7 @@ class FlightFactory extends Factory
         ];
 
         return [
-            'id' => Str::ulid()->toBase32(),
+            'id' => $this->newModel()->newUniqueId(),
             'registration' => $this->faker->randomElement(['HB-ABC', 'HB-HFH', 'HB-CCV', 'HB-HFK']),
             'model' => $this->faker->randomElement(['CESSNA', 'BRAVO', 'DIAMOND', 'PILATUS', 'MOONEY', 'PIPER', 'BEECH']),
             'flight_number' => $this->faker->randomNumber(4),
@@ -43,5 +42,32 @@ class FlightFactory extends Factory
             'arrival_location' => new Point($this->faker->latitude(), $this->faker->longitude()),
             'status' => $this->faker->randomElement(array_map(static fn (\BackedEnum $enum) => $enum->value, FlightStatus::cases())),
         ];
+    }
+
+    public function inFuture(): static
+    {
+        return $this->state(function (array $attributes): array {
+            return [
+                'out' => Carbon::now()->addMonths(3),
+            ];
+        });
+    }
+
+    public function withStatus(FlightStatus $status): static
+    {
+        return $this->state(function () use ($status): array {
+           return [
+               'status' => $status->value,
+           ];
+        });
+    }
+
+    public function inPast(): static
+    {
+        return $this->state(function (array $attributes): array {
+           return [
+               'out' => Carbon::now()->subMonths(3),
+           ];
+        });
     }
 }

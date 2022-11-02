@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
+use Spatie\Permission\Models\Role;
 
 class UserFactory extends Factory
 {
@@ -22,7 +23,7 @@ class UserFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'id' => $this->newModel()->newUniqueId(),
@@ -68,5 +69,17 @@ class UserFactory extends Factory
                 }),
             'ownedTeams'
         );
+    }
+
+    /**
+     * Generate a user with the admin role.
+     *
+     * @return $this
+     */
+    public function asAdmin(): static
+    {
+        return $this->afterMaking(static function (User $user): void {
+            $user->assignRole(Role::findOrCreate('admin'));
+        });
     }
 }
