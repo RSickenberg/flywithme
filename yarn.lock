@@ -512,8 +512,8 @@ __metadata:
   linkType: hard
 
 "daisyui@npm:^2.31.0":
-  version: 2.31.0
-  resolution: "daisyui@npm:2.31.0"
+  version: 2.38.0
+  resolution: "daisyui@npm:2.38.0"
   dependencies:
     color: ^4.2
     css-selector-tokenizer: ^0.8.0
@@ -522,7 +522,7 @@ __metadata:
   peerDependencies:
     autoprefixer: ^10.0.2
     postcss: ^8.1.6
-  checksum: ad802f0f03ab0c0cdae745dda567f0415e475f66d933801a974ff5ba369fb9f302693dd14e306956d5b7653763badc738fed8eea201b182ecb13a3142c6b47e7
+  checksum: ea112101a8a19a339a0a84c8bb1a12a3ad2b6679b512687e678c43e07aa8a69c8920ad1171623ed30dcf0602c336c38986536638834d386b6bd9b3e21b75949d
   languageName: node
   linkType: hard
 
