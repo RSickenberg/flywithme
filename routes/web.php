@@ -33,5 +33,6 @@ Route::middleware([
         ->middleware(['role:admin'])
         ->group(static function () {
             Route::get('/', 'index')->name('flight_index');
+            Route::get('/create', 'create')->name('flight_create');
         });
 });

@@ -56,18 +56,18 @@ class FlightFactory extends Factory
     public function withStatus(FlightStatus $status): static
     {
         return $this->state(function () use ($status): array {
-           return [
-               'status' => $status->value,
-           ];
+            return [
+                'status' => $status->value,
+            ];
         });
     }
 
     public function inPast(): static
     {
         return $this->state(function (array $attributes): array {
-           return [
-               'out' => Carbon::now()->subMonths(3),
-           ];
+            return [
+                'out' => Carbon::now()->subMonths(3),
+            ];
         });
     }
 }
