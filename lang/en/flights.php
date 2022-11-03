@@ -33,8 +33,8 @@ return [
                 'general' => 'General',
                 'geo' => [
                     'label' => 'Geolocation',
-                    'desc' => 'Input all information regarding the flight data'
-                ]
+                    'desc' => 'Input all information regarding the flight data',
+                ],
             ],
             'status' => 'Status',
             'registration' => 'Registration',
@@ -55,7 +55,7 @@ return [
                 'departure' => 'Departure location',
                 'ar_heading' => 'Arrival Airport coordinates',
                 'arrival' => 'Arrival location',
-            ]
+            ],
         ],
     ],
 ];

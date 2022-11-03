@@ -113,7 +113,7 @@ class CreateFlight extends Component implements HasForms
                 Wizard\Step::make(__('flights.create.form.wizard.geo.label'))
                     ->icon('heroicon-s-globe-alt')
                     ->description(__('flights.create.form.wizard.geo.desc'))->schema($this->buildLocationForm()),
-            ])->submitAction(new HtmlString('<button type="submit" class="mt-8 ds-btn ds-btn-accent ds-btn-block text-black text-lg">' . __("flights.add") . '</button>')),
+            ])->submitAction(new HtmlString('<button type="submit" class="mt-8 ds-btn ds-btn-accent ds-btn-block text-black text-lg">'.__('flights.add').'</button>')),
         ];
     }
 
@@ -166,13 +166,13 @@ class CreateFlight extends Component implements HasForms
                             ->label(__('flights.create.form.location.departure'))
                             ->placeholder('46.5266079930082')
                             ->hint('Latitude')
-                            ->mask(static fn(TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
                         TextInput::make('departure_location_long')
                             ->numeric()->required()
                             ->label(__('flights.create.form.location.departure'))
                             ->placeholder('6.596511300367413')
                             ->hint('Longitude')
-                            ->mask(static fn(TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
                     ]),
                     Section::make(__('flights.create.form.location.ar_heading'))->schema([
                         TextInput::make('arrival_location_lat')
@@ -180,13 +180,13 @@ class CreateFlight extends Component implements HasForms
                             ->label(__('flights.create.form.location.arrival'))
                             ->placeholder('46.5266079930082')
                             ->hint('Latitude')
-                            ->mask(static fn(TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
                         TextInput::make('arrival_location_long')
                             ->numeric()->required()
                             ->label(__('flights.create.form.location.arrival'))
                             ->placeholder('6.596511300367413')
                             ->hint('Longitude')
-                            ->mask(static fn(TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
                     ]),
                 ]),
             ]),
