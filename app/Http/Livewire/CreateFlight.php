@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -26,6 +27,8 @@ class CreateFlight extends Component implements HasForms
     use InteractsWithForms;
 
     public Flight $flight;
+
+    public mixed $data;
 
     public function mount(): void
     {
@@ -83,7 +86,7 @@ class CreateFlight extends Component implements HasForms
                                     ->label(__('flights.create.form.out'))
                                     ->default(Carbon::now())
                                     ->displayFormat('d.m.Y H:i')
-                                    ->minDate(now())->withoutSeconds()
+                                    ->minDate(now()->subMinute())->withoutSeconds()
                                     ->required()->after('now'),
                                 DateTimePicker::make('in')
                                     ->label(__('flights.create.form.in'))
@@ -127,6 +130,11 @@ class CreateFlight extends Component implements HasForms
             ->send();
     }
 
+    protected function getFormStatePath(): string
+    {
+        return 'data';
+    }
+
     /**
      * Get the view / contents that represent the component.
      *
@@ -152,7 +160,34 @@ class CreateFlight extends Component implements HasForms
                         ->required(),
                 ]),
                 Fieldset::make(__('flights.create.form.fieldsets.geo'))->schema([
-                    
+                    Section::make(__('flights.create.form.location.dp_heading'))->schema([
+                        TextInput::make('departure_location_lat')
+                            ->numeric()->required()
+                            ->label(__('flights.create.form.location.departure'))
+                            ->placeholder('46.5266079930082')
+                            ->hint('Latitude')
+                            ->mask(static fn(TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                        TextInput::make('departure_location_long')
+                            ->numeric()->required()
+                            ->label(__('flights.create.form.location.departure'))
+                            ->placeholder('6.596511300367413')
+                            ->hint('Longitude')
+                            ->mask(static fn(TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                    ]),
+                    Section::make(__('flights.create.form.location.ar_heading'))->schema([
+                        TextInput::make('arrival_location_lat')
+                            ->numeric()->required()
+                            ->label(__('flights.create.form.location.arrival'))
+                            ->placeholder('46.5266079930082')
+                            ->hint('Latitude')
+                            ->mask(static fn(TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                        TextInput::make('arrival_location_long')
+                            ->numeric()->required()
+                            ->label(__('flights.create.form.location.arrival'))
+                            ->placeholder('6.596511300367413')
+                            ->hint('Longitude')
+                            ->mask(static fn(TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                    ]),
                 ]),
             ]),
         ];

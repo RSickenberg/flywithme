@@ -49,7 +49,13 @@ return [
             'route' => 'Route',
             'legs' => 'Legs',
             'timezone_departure' => 'Timezone of departure',
-            'timezone_arrival' => 'Timezone of arrival'
+            'timezone_arrival' => 'Timezone of arrival',
+            'location' => [
+                'dp_heading' => 'Departure Airport coordinates',
+                'departure' => 'Departure location',
+                'ar_heading' => 'Arrival Airport coordinates',
+                'arrival' => 'Arrival location',
+            ]
         ],
     ],
 ];
