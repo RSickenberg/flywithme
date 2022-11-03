@@ -13,6 +13,7 @@ on:
       - 'database/**'
       - 'config/**'
       - 'resources/**'
+      - 'Makefile'
 
 jobs:
   pint:
