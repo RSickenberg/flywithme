@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added toast notifications
+- Added form to create a new flight
+- Added Filament package suites
 
 ## [0.1.1] - 2022-11-02
 ### Changed
