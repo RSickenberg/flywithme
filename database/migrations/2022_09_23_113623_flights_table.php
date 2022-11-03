@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('arrival')->comment('The airport destination ICAO code');
             $table->dateTimeTz('out')->comment('The date and hour of departure');
             $table->dateTimeTz('in')->comment('The date and hour of arrival');
+            $table->string('out_tz')->comment('The departure timezone set');
+            $table->string('in_tz')->comment('The arrival timezone set');
             $table->string('metar')->nullable()->comment('The metar of the flight');
             $table->string('route')->comment('The route used')->default('N/A');
             $table->unsignedInteger('legs')->comment('The amount of legs')->default(1);

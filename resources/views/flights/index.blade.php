@@ -15,8 +15,7 @@
             <div class="flex flex-row items-center space-x-8">
                 @include('.flights._tabs')
                 <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                    <button type="button"
-                            class="ds-btn ds-btn-accent ds-btn-block text-white">{{ __('flights.add') }}</button>
+                    <a href="{{ route('flight_create') }}" type="button" class="ds-btn ds-btn-accent ds-btn-block text-white">{{ __('flights.add') }}</a>
                 </div>
             </div>
         </div>
@@ -24,11 +23,11 @@
     <div class="py-12">
         @include('.flights._table-read', ['flights' => $flights])
     </div>
-@push('extra-js')
-    <script type="text/javascript" defer>
-        document.addEventListener('DOMContentLoaded', function() {
-            FlyWithMe.App.FlightIndex = new FlyWithMe.App.FlightIndex;
-        });
-    </script>
-@endpush
+    @push('extra-js')
+        <script type="text/javascript" defer>
+            document.addEventListener('DOMContentLoaded', function() {
+                FlyWithMe.App.FlightIndex = new FlyWithMe.App.FlightIndex;
+            });
+        </script>
+    @endpush
 </x-app-layout>

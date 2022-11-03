@@ -35,6 +35,8 @@ class FlightFactory extends Factory
             'arrival' => $this->faker->randomElement(['LSGL', 'LSGG', 'LSGN', 'LSGS', 'LSGY', 'LSGZ']),
             'out' => Carbon::now()->toDateTimeString(),
             'in' => Carbon::now()->addHours(random_int(1, 7))->toDateTimeString(),
+            'out_tz' => $this->faker->timezone(),
+            'in_tz' => $this->faker->timezone(),
             'metar' => $this->faker->randomElement($rawMetars),
             'route' => $this->faker->word(),
             'legs' => $this->faker->randomNumber(1),
@@ -56,18 +58,18 @@ class FlightFactory extends Factory
     public function withStatus(FlightStatus $status): static
     {
         return $this->state(function () use ($status): array {
-           return [
-               'status' => $status->value,
-           ];
+            return [
+                'status' => $status->value,
+            ];
         });
     }
 
     public function inPast(): static
     {
         return $this->state(function (array $attributes): array {
-           return [
-               'out' => Carbon::now()->subMonths(3),
-           ];
+            return [
+                'out' => Carbon::now()->subMonths(3),
+            ];
         });
     }
 }

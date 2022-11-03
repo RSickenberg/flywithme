@@ -28,9 +28,9 @@ pint: ##@Lint Run pint linter
 	@./vendor/bin/sail pint
 
 reset_db: ##@DB Wipe and re-migrate / seed
-	@./vendor/bin/sail artisan db:wipe
-	@./vendor/bin/sail artisan migrate
-	@./vendor/bin/sail artisan db:seed
+	@./vendor/bin/sail artisan db:wipe --no-interaction
+	@./vendor/bin/sail artisan migrate --no-interaction
+	@./vendor/bin/sail artisan db:seed --no-interaction
 
 test: ##@Test Run the tests
 	@./vendor/bin/sail artisan test

@@ -28,4 +28,9 @@ class FlightsController extends Controller
             'flights' => $flights,
         ]);
     }
+
+    public function create(): View
+    {
+        return \view('flights.create', []);
+    }
 }

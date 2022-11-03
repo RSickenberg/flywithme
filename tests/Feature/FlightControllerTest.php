@@ -94,7 +94,7 @@ final class FlightControllerTest extends TestCase
             ->create();
         $this->actingAs($this->admin);
 
-        $response = $this->get(self::BASE_URL . '?old=1');
+        $response = $this->get(self::BASE_URL.'?old=1');
 
         $response->assertSee($flight->registration);
         $response->assertSee($flight->model);
@@ -103,7 +103,7 @@ final class FlightControllerTest extends TestCase
         $response->assertSee(ucfirst($flight->status->value));
         $response->assertSee($flight->out);
 
-        $response = $this->get(self::BASE_URL . '?old=0');
+        $response = $this->get(self::BASE_URL.'?old=0');
         $response->assertDontSee($flight->registration);
         $response->assertDontSee($flight->model);
         $response->assertDontSee($flight->departure);

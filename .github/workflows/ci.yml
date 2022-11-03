@@ -1,0 +1,52 @@
+name: CI
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    paths:
+      - '.github/**'
+      - 'app/**'
+      - 'tests/**'
+      - 'routes/**'
+      - 'database/**'
+      - 'config/**'
+      - 'resources/**'
+      - 'Makefile'
+
+jobs:
+  pint:
+    name: Laravel Pint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          tools: composer
+      - name: Composer install
+        run: composer install --prefer-dist
+      - name: Run pint
+        run: ./vendor/bin/pint
+
+  phpunit:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: docker/setup-buildx-action@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          tools: composer
+      - name: Composer install
+        run: composer install --prefer-dist
+      - name: Sail up
+        run: make up
+      - name: Migrations
+        run: make reset_db
+      - name: Tests
+        run: make test
