@@ -26,6 +26,8 @@ return [
             'fieldsets' => [
                 'base_data' => 'Base Data',
                 'nav' => 'Navigation',
+                'tz' => 'Timezones',
+                'geo' => 'Positions',
             ],
             'wizard' => [
                 'general' => 'General',
@@ -46,6 +48,8 @@ return [
             'metar_placeholder' => 'If available, insert here the METAR for the flight.',
             'route' => 'Route',
             'legs' => 'Legs',
+            'timezone_departure' => 'Timezone of departure',
+            'timezone_arrival' => 'Timezone of arrival'
         ],
     ],
 ];
