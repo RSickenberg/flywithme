@@ -20,6 +20,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\HtmlString;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
+use MatanYadaev\EloquentSpatial\Objects\Point;
 use Tapp\FilamentTimezoneField\Forms\Components\TimezoneSelect;
 
 class CreateFlight extends Component implements HasForms
@@ -28,16 +29,52 @@ class CreateFlight extends Component implements HasForms
 
     public Flight $flight;
 
-    public mixed $data;
+    public mixed $data = null;
+
+    private const UPPERCASE_KEYS = [
+        'registration',
+        'model',
+        'departure',
+        'arrival',
+        'route',
+        'metar',
+    ];
 
     public function mount(): void
     {
+        $this->flight = new Flight();
+
         $this->form->fill();
     }
 
-    public function create(): void
+    public function submit(): void
     {
-        Flight::create($this->form->getState());
+        $state = $this->form->getState();
+
+        // Uppercase needed words
+        foreach (self::UPPERCASE_KEYS as $keys) {
+            if ($text = $state[$keys]) {
+                $state[$keys] = strtoupper($text);
+            }
+        }
+
+        // Set the carbon instance.
+        $state['out'] = Carbon::parse($state['out'], 'UTC');
+        $state['in'] = Carbon::parse($state['in'], 'UTC');
+
+        $state['departure_location'] = new Point($state['departure_location_lat'], $state['departure_location_long']);
+        $state['arrival_location'] = new Point($state['arrival_location_lat'], $state['arrival_location_long']);
+        unset($state['departure_location_lat'], $state['departure_location_long'], $state['arrival_location_lat'], $state['arrival_location_long']);
+
+        $flight = $this->flight->create($state);
+        $flight->times()->create();
+
+        Notification::make()
+            ->title('The flight have been created successfully!')
+            ->success()
+            ->send();
+
+        redirect()->route('flight_index');
     }
 
     protected function getFormSchema(): array
@@ -84,12 +121,14 @@ class CreateFlight extends Component implements HasForms
                                     ->required()->alpha(),
                                 DateTimePicker::make('out')
                                     ->label(__('flights.create.form.out'))
+                                    ->hint('Zulu time')->timezone('UTC')
                                     ->default(Carbon::now())
                                     ->displayFormat('d.m.Y H:i')
-                                    ->minDate(now()->subMinute())->withoutSeconds()
+                                    ->minDate(now()->subMinutes(30))->withoutSeconds()
                                     ->required()->after('now'),
                                 DateTimePicker::make('in')
                                     ->label(__('flights.create.form.in'))
+                                    ->hint('Zulu time')->timezone('UTC')
                                     ->default(Carbon::now()->addHour())
                                     ->displayFormat('d.m.Y H:i')
                                     ->withoutSeconds()
@@ -113,13 +152,13 @@ class CreateFlight extends Component implements HasForms
                 Wizard\Step::make(__('flights.create.form.wizard.geo.label'))
                     ->icon('heroicon-s-globe-alt')
                     ->description(__('flights.create.form.wizard.geo.desc'))->schema($this->buildLocationForm()),
-            ])->submitAction(new HtmlString('<button type="submit" class="mt-8 ds-btn ds-btn-accent ds-btn-block text-black text-lg">'.__('flights.add').'</button>')),
+            ])->submitAction(new HtmlString('<button type="submit" class="mt-8 ds-btn ds-btn-accent text-black">'.__('flights.add').'</button>')),
         ];
     }
 
-    protected function getFormModel(): string
+    protected function getFormModel(): Flight
     {
-        return Flight::class;
+        return $this->flight;
     }
 
     protected function onValidationError(ValidationException $exception): void
@@ -147,14 +186,16 @@ class CreateFlight extends Component implements HasForms
 
     private function buildLocationForm(): array
     {
+        $decimalPlaces = 5;
+
         return [
             Grid::make()->schema([
                 Fieldset::make(__('flights.create.form.fieldsets.tz'))->schema([
-                    TimezoneSelect::make('timezone_departure')
+                    TimezoneSelect::make('out_tz')
                         ->label(__('flights.create.form.timezone_departure'))
                         ->searchable()
                         ->required(),
-                    TimezoneSelect::make('timezone_arrival')
+                    TimezoneSelect::make('in_tz')
                         ->label(__('flights.create.form.timezone_arrival'))
                         ->searchable()
                         ->required(),
@@ -164,29 +205,29 @@ class CreateFlight extends Component implements HasForms
                         TextInput::make('departure_location_lat')
                             ->numeric()->required()
                             ->label(__('flights.create.form.location.departure'))
-                            ->placeholder('46.5266079930082')
+                            ->placeholder('46.52660')
                             ->hint('Latitude')
-                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces($decimalPlaces)),
                         TextInput::make('departure_location_long')
                             ->numeric()->required()
                             ->label(__('flights.create.form.location.departure'))
-                            ->placeholder('6.596511300367413')
+                            ->placeholder('6.59651')
                             ->hint('Longitude')
-                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces($decimalPlaces)),
                     ]),
                     Section::make(__('flights.create.form.location.ar_heading'))->schema([
                         TextInput::make('arrival_location_lat')
                             ->numeric()->required()
                             ->label(__('flights.create.form.location.arrival'))
-                            ->placeholder('46.5266079930082')
+                            ->placeholder('46.52660')
                             ->hint('Latitude')
-                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces($decimalPlaces)),
                         TextInput::make('arrival_location_long')
                             ->numeric()->required()
                             ->label(__('flights.create.form.location.arrival'))
-                            ->placeholder('6.596511300367413')
+                            ->placeholder('6.59651')
                             ->hint('Longitude')
-                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces(2)),
+                            ->mask(static fn (TextInput\Mask $mask) => $mask->numeric()->decimalPlaces($decimalPlaces)),
                     ]),
                 ]),
             ]),

@@ -35,6 +35,8 @@ class FlightFactory extends Factory
             'arrival' => $this->faker->randomElement(['LSGL', 'LSGG', 'LSGN', 'LSGS', 'LSGY', 'LSGZ']),
             'out' => Carbon::now()->toDateTimeString(),
             'in' => Carbon::now()->addHours(random_int(1, 7))->toDateTimeString(),
+            'out_tz' => $this->faker->timezone(),
+            'in_tz' => $this->faker->timezone(),
             'metar' => $this->faker->randomElement($rawMetars),
             'route' => $this->faker->word(),
             'legs' => $this->faker->randomNumber(1),
