@@ -1239,13 +1239,13 @@ __metadata:
   linkType: hard
 
 "laravel-vite-plugin@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "laravel-vite-plugin@npm:0.7.0"
+  version: 0.7.1
+  resolution: "laravel-vite-plugin@npm:0.7.1"
   dependencies:
     vite-plugin-full-reload: ^1.0.1
   peerDependencies:
     vite: ^3.0.0
-  checksum: 634bdfde2ca63b2655e915668f66ee7e8091ea75e874c6f83422d9a421945903515fb4aeee17667fd3a8722be9f5f606af094b77c6cfa7b8a57008b280355075
+  checksum: f8be7c49883cc95036840a3c62616d850f022305eae256ccb488094910ebae3371fb35ee47a74c514af04e146e63fb0969d6e01927aa835469eff2be4a90df57
   languageName: node
   linkType: hard
 
