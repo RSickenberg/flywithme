@@ -15,9 +15,9 @@ __metadata:
   linkType: hard
 
 "@awcodes/alpine-floating-ui@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "@awcodes/alpine-floating-ui@npm:3.4.0"
-  checksum: 1b5feea3b29ff8e3324eb173fd38461d6a427a0146f4827fc5546cd69846e33f902b98d5ed55b9738a80f7b87e2fd18fc90b1f32e9e9932bb42aa537d3031593
+  version: 3.5.0
+  resolution: "@awcodes/alpine-floating-ui@npm:3.5.0"
+  checksum: c5694fb24adefbe8c1a791ef8d3ce7876c76b7c36de9372d8f9fb31d8c1b9072e0c732af64e81be23c26d20893c363c55a98323ba7c637d9d8e053d4095da427
   languageName: node
   linkType: hard
 
