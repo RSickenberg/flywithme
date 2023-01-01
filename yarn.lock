@@ -1239,13 +1239,14 @@ __metadata:
   linkType: hard
 
 "laravel-vite-plugin@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "laravel-vite-plugin@npm:0.7.0"
+  version: 0.7.3
+  resolution: "laravel-vite-plugin@npm:0.7.3"
   dependencies:
-    vite-plugin-full-reload: ^1.0.1
+    picocolors: ^1.0.0
+    vite-plugin-full-reload: ^1.0.5
   peerDependencies:
-    vite: ^3.0.0
-  checksum: 634bdfde2ca63b2655e915668f66ee7e8091ea75e874c6f83422d9a421945903515fb4aeee17667fd3a8722be9f5f606af094b77c6cfa7b8a57008b280355075
+    vite: ^3.0.0 || ^4.0.0
+  checksum: 10fc833375eac6f3223829d5c276d7aaab577763146db7c49eee66692b1a1d9d5012ace220d0105706fe8761f3e3182031d0f0dde6d5257bf052b46590ba069a
   languageName: node
   linkType: hard
 
@@ -2152,15 +2153,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-full-reload@npm:^1.0.1":
-  version: 1.0.4
-  resolution: "vite-plugin-full-reload@npm:1.0.4"
+"vite-plugin-full-reload@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "vite-plugin-full-reload@npm:1.0.5"
   dependencies:
     picocolors: ^1.0.0
     picomatch: ^2.3.1
   peerDependencies:
-    vite: ^2 || ^3
-  checksum: 1ea80cefcbe3d244b5cdbe8685f1f4cbcf188b4d34e14aa11bcdf84c469406d7d605447b4eb081c6f5fdc4884c934796cebf63f993a2f198a4a0d2d8a9a4ba81
+    vite: ^2 || ^3 || ^4
+  checksum: 250d50a2ce4b4de0f6855aaf191d3c37838da6795a113b1de28b390be71a0bb23351072fa8f4ab8ad4a07026ecb56b3d0358a1341288de9a736f99ae5a47d7ce
   languageName: node
   linkType: hard
 
