@@ -14,10 +14,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@awcodes/alpine-floating-ui@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "@awcodes/alpine-floating-ui@npm:3.4.0"
-  checksum: 1b5feea3b29ff8e3324eb173fd38461d6a427a0146f4827fc5546cd69846e33f902b98d5ed55b9738a80f7b87e2fd18fc90b1f32e9e9932bb42aa537d3031593
+"@awcodes/alpine-floating-ui@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "@awcodes/alpine-floating-ui@npm:3.5.0"
+  checksum: c5694fb24adefbe8c1a791ef8d3ce7876c76b7c36de9372d8f9fb31d8c1b9072e0c732af64e81be23c26d20893c363c55a98323ba7c637d9d8e053d4095da427
   languageName: node
   linkType: hard
 
@@ -35,10 +35,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-free@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "@fortawesome/fontawesome-free@npm:6.2.0"
-  checksum: fd3fcc0a963b907110922b5ac0ca67633aea20b5034102a1f5d285830f7f7a27f9c9de0c4a30228ccd2579bd8f95581a1bbef9519c7b74632e7012d60dd57bb7
+"@fortawesome/fontawesome-free@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@fortawesome/fontawesome-free@npm:6.2.1"
+  checksum: c77b7c8b0965e5c17f4ca45667885b6273e26af97a9e83db343fc756c159b5acd35cf420e73e1b916af1d275179290ccfb1900af48631749e30f36464f339bd3
   languageName: node
   linkType: hard
 
@@ -49,12 +49,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/vue@npm:^1.7.3":
-  version: 1.7.3
-  resolution: "@headlessui/vue@npm:1.7.3"
+"@headlessui/vue@npm:^1.7.7":
+  version: 1.7.7
+  resolution: "@headlessui/vue@npm:1.7.7"
   peerDependencies:
     vue: ^3.2.0
-  checksum: 6034b939acdf6c398629982b266d9d0dfcb59e5783e804ab620d96081c636d520c47071e996b09a56a4fb2995c839b7bef0e0d61f40d358cda770e2f3db58dd5
+  checksum: 6ffb0ba1a62e84e5b1c9ccd472845587d2b345f6b34251b86a7723520746ea46cd8d8a0fb7f2912a13154a7dae8d05cf9a34389d71636319212cb5818de0a7ce
   languageName: node
   linkType: hard
 
@@ -125,9 +125,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/typography@npm:^0.5.7":
-  version: 0.5.7
-  resolution: "@tailwindcss/typography@npm:0.5.7"
+"@tailwindcss/typography@npm:^0.5.8":
+  version: 0.5.8
+  resolution: "@tailwindcss/typography@npm:0.5.8"
   dependencies:
     lodash.castarray: ^4.4.0
     lodash.isplainobject: ^4.0.6
@@ -135,7 +135,7 @@ __metadata:
     postcss-selector-parser: 6.0.10
   peerDependencies:
     tailwindcss: "*"
-  checksum: 27686a455d13367c6ee4473e0579f1fc0e9de1de4606845101f8943eb94c5d00a18fecac60111028b9cb2f3253ea16a9a6f889d3711214b5baaa153f021fbc47
+  checksum: afe172c75ddf086f840b10f95e562bb210dde5612fccfcfd3c4cee688c57ca5b79569b3c2cb75687b34b1b7f9ad194b14e9fbb09a741cd69198bb92b5ac3838f
   languageName: node
   linkType: hard
 
@@ -534,9 +534,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^2.38.0":
-  version: 2.38.0
-  resolution: "daisyui@npm:2.38.0"
+"daisyui@npm:^2.46.1":
+  version: 2.46.1
+  resolution: "daisyui@npm:2.46.1"
   dependencies:
     color: ^4.2
     css-selector-tokenizer: ^0.8.0
@@ -545,7 +545,7 @@ __metadata:
   peerDependencies:
     autoprefixer: ^10.0.2
     postcss: ^8.1.6
-  checksum: ea112101a8a19a339a0a84c8bb1a12a3ad2b6679b512687e678c43e07aa8a69c8920ad1171623ed30dcf0602c336c38986536638834d386b6bd9b3e21b75949d
+  checksum: 6385e1d322e893568739c29908e592d9a95deee3599aac6fac2ebdc84c871d97d0c97d24e779587f86fb4c66e83213b721b72de9df5b76bbf206757318a2e382
   languageName: node
   linkType: hard
 
@@ -1238,14 +1238,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"laravel-vite-plugin@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "laravel-vite-plugin@npm:0.7.0"
+"laravel-vite-plugin@npm:^0.7.3":
+  version: 0.7.3
+  resolution: "laravel-vite-plugin@npm:0.7.3"
   dependencies:
-    vite-plugin-full-reload: ^1.0.1
+    picocolors: ^1.0.0
+    vite-plugin-full-reload: ^1.0.5
   peerDependencies:
-    vite: ^3.0.0
-  checksum: 634bdfde2ca63b2655e915668f66ee7e8091ea75e874c6f83422d9a421945903515fb4aeee17667fd3a8722be9f5f606af094b77c6cfa7b8a57008b280355075
+    vite: ^3.0.0 || ^4.0.0
+  checksum: 10fc833375eac6f3223829d5c276d7aaab577763146db7c49eee66692b1a1d9d5012ace220d0105706fe8761f3e3182031d0f0dde6d5257bf052b46590ba069a
   languageName: node
   linkType: hard
 
@@ -1716,7 +1717,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.17, postcss@npm:^8.4.18":
+"postcss@npm:^8.4.18":
   version: 8.4.18
   resolution: "postcss@npm:8.4.18"
   dependencies:
@@ -1724,6 +1725,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: 9349fd99849b2e3d2e134ff949b7770ecb12375f352723ce2bcc06167eba3850ea7844c1b191a85cd915d6a396b4e8ee9a5267e6cc5d8d003d0cbc7a97555d39
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.20":
+  version: 8.4.20
+  resolution: "postcss@npm:8.4.20"
+  dependencies:
+    nanoid: ^3.3.4
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 1a5609ea1c1b204f9c2974a0019ae9eef2d99bf645c2c9aac675166c4cb1005be7b5e2ba196160bc771f5d9ac896ed883f236f888c891e835e59d28fff6651aa
   languageName: node
   linkType: hard
 
@@ -1857,21 +1869,21 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@alpinejs/focus": ^3.10.5
-    "@awcodes/alpine-floating-ui": ^3.4.0
-    "@fortawesome/fontawesome-free": ^6.2.0
-    "@headlessui/vue": ^1.7.3
+    "@awcodes/alpine-floating-ui": ^3.5.0
+    "@fortawesome/fontawesome-free": ^6.2.1
+    "@headlessui/vue": ^1.7.7
     "@heroicons/vue": ^2.0.13
     "@tailwindcss/forms": ^0.5.3
-    "@tailwindcss/typography": ^0.5.7
+    "@tailwindcss/typography": ^0.5.8
     alpinejs: ^3.10.5
     autoprefixer: ^10.4.13
     axios: ^0.27.2
-    daisyui: ^2.38.0
-    laravel-vite-plugin: ^0.7.0
+    daisyui: ^2.46.1
+    laravel-vite-plugin: ^0.7.3
     lodash: ^4.17.21
-    postcss: ^8.4.18
-    tailwindcss: ^3.2.1
-    vite: ^3.2.2
+    postcss: ^8.4.20
+    tailwindcss: ^3.2.4
+    vite: ^3.2.5
   languageName: unknown
   linkType: soft
 
@@ -2054,9 +2066,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "tailwindcss@npm:3.2.1"
+"tailwindcss@npm:^3.2.4":
+  version: 3.2.4
+  resolution: "tailwindcss@npm:3.2.4"
   dependencies:
     arg: ^5.0.2
     chokidar: ^3.5.3
@@ -2072,7 +2084,7 @@ __metadata:
     normalize-path: ^3.0.0
     object-hash: ^3.0.0
     picocolors: ^1.0.0
-    postcss: ^8.4.17
+    postcss: ^8.4.18
     postcss-import: ^14.1.0
     postcss-js: ^4.0.0
     postcss-load-config: ^3.1.4
@@ -2086,7 +2098,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 8479f6e469b3ac3146fec5bf4b5ec411f24f481087d9db9a9e16bd5169cfe5f6af082b8fe656bbb8829faa8805765104843f549b08b4ba34e972d0743d0c7e94
+  checksum: ec187d180c722ec4f57537f2216c7b21269b525f12aaf353cea464d939c3e6286a1221eb3e1206e45d1f015f296171309ad4d9952899b0245cd07d9500a9401f
   languageName: node
   linkType: hard
 
@@ -2152,21 +2164,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-full-reload@npm:^1.0.1":
-  version: 1.0.4
-  resolution: "vite-plugin-full-reload@npm:1.0.4"
+"vite-plugin-full-reload@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "vite-plugin-full-reload@npm:1.0.5"
   dependencies:
     picocolors: ^1.0.0
     picomatch: ^2.3.1
   peerDependencies:
-    vite: ^2 || ^3
-  checksum: 1ea80cefcbe3d244b5cdbe8685f1f4cbcf188b4d34e14aa11bcdf84c469406d7d605447b4eb081c6f5fdc4884c934796cebf63f993a2f198a4a0d2d8a9a4ba81
+    vite: ^2 || ^3 || ^4
+  checksum: 250d50a2ce4b4de0f6855aaf191d3c37838da6795a113b1de28b390be71a0bb23351072fa8f4ab8ad4a07026ecb56b3d0358a1341288de9a736f99ae5a47d7ce
   languageName: node
   linkType: hard
 
-"vite@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "vite@npm:3.2.2"
+"vite@npm:^3.2.5":
+  version: 3.2.5
+  resolution: "vite@npm:3.2.5"
   dependencies:
     esbuild: ^0.15.9
     fsevents: ~2.3.2
@@ -2174,6 +2186,7 @@ __metadata:
     resolve: ^1.22.1
     rollup: ^2.79.1
   peerDependencies:
+    "@types/node": ">= 14"
     less: "*"
     sass: "*"
     stylus: "*"
@@ -2183,6 +2196,8 @@ __metadata:
     fsevents:
       optional: true
   peerDependenciesMeta:
+    "@types/node":
+      optional: true
     less:
       optional: true
     sass:
@@ -2195,7 +2210,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 7197ac91c612dda922367a95afa1b210353d6168d41845c186e2217bda1328d17b021b93d8089e336f9533b94645ae5dca18bb10937759f559c87006dd957fcd
+  checksum: ad35b7008c2b62a167d1d1a82f0a0c60fa457733f1969e9eedf0b0077f67a7ac74b4c9477e75a397895150f09b6551f0c17841c5b05c34d9fe302bb0b5dc28a8
   languageName: node
   linkType: hard
 
