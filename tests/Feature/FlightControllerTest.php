@@ -12,6 +12,7 @@ use Tests\TestCase;
 
 /**
  * @group fly-with-me
+ *
  * @coversDefaultClass \App\Http\Controllers\FlightsController
  */
 final class FlightControllerTest extends TestCase
